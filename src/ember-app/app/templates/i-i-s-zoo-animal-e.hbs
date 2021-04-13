@@ -1,0 +1,71 @@
+<h3 class="ui header">{{t "forms.i-i-s-zoo-animal-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.name
+      class=(if (v-get validationObject "name" "isInvalid") "error")
+      label=(t "forms.i-i-s-zoo-animal-e.name-caption")
+      data-test-i-i-s-zoo-animal-e-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "name" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-zoo-animal-e.animalType-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.animalType
+      class=(if (v-get validationObject "animalType" "isInvalid") "error")
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="animalType"
+      projection="AnimalTypeL"
+      title=(t "forms.i-i-s-zoo-animal-e.animalType-caption")
+      readonly=readonly
+      componentName="animalTypeLookup"
+      class=(if (v-get validationObject "animalType" "isInvalid") "error")
+      data-test-i-i-s-zoo-animal-e-animalType=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "animalType" "message")}}
+  </div>
+
+  <div class="field">
+    <label>{{t "forms.i-i-s-zoo-animal-e.homes-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="homesGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.homes
+      content=model.homes
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationObject "homes" "isInvalid") "error")
+      data-test-i-i-s-zoo-animal-e-homes=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationObject "homes" "message")}}
+  </div>
+</form>

@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "AnimalType",
+      "projection": "AnimalTypeL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Animal",
+  "name": "IISZooAnimalE",
+  "className": "AnimalE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-zoo-animal",
+      "modelProjection": "AnimalE"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+﻿{
+  "name": "IISZooAnimal",
+  "modelName": "i-i-s-zoo-animal",
+  "className": "Animal",
+  "nameSpace": "IIS.Zoo",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "animalType",
+      "relatedTo": "i-i-s-zoo-animal-type",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "homes",
+      "relatedTo": "i-i-s-zoo-animal-home",
+      "inverse": "animal"
+    }
+  ],
+  "projections": [
+    {
+      "name": "AnimalE",
+      "modelName": "i-i-s-zoo-animal",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Name",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Name",
+          "lookupValueField": "name",
+          "relationName": "AnimalType",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Name",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Animal type",
+          "name": "animalType",
+          "relatedTo": "i-i-s-zoo-animal-type",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "AnimalHomeE",
+          "caption": "Homes",
+          "name": "homes",
+          "relatedTo": "i-i-s-zoo-animal-home",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "AnimalL",
+      "modelName": "i-i-s-zoo-animal",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Name",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "AnimalType",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Name",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Name",
+          "name": "animalType",
+          "relatedTo": "i-i-s-zoo-animal-type",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

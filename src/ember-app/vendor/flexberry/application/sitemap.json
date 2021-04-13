@@ -1,0 +1,29 @@
+﻿{
+  "applicationCaption": "Zoo",
+  "applicationTitle": "Zoo",
+  "items": [
+    {
+      "link": null,
+      "menuName": "zoo",
+      "caption": "Zoo",
+      "title": "Zoo",
+      "children": [
+        {
+          "link": "i-i-s-zoo-animal-l",
+          "menuName": null,
+          "caption": "Animal",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-zoo-animal-type-l",
+          "menuName": null,
+          "caption": "Animal type",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

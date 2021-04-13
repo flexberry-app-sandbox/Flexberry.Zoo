@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Animal type",
+  "name": "IISZooAnimalTypeE",
+  "className": "AnimalTypeE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-zoo-animal-type",
+      "modelProjection": "AnimalTypeE"
+    }
+  ]
+}

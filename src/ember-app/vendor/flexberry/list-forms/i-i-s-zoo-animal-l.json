@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-zoo-animal-e",
+  "editForm": "i-i-s-zoo-animal-e",
+  "external": false,
+  "caption": "Animal",
+  "name": "IISZooAnimalL",
+  "className": "AnimalL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-zoo-animal",
+      "modelProjection": "AnimalL"
+    }
+  ]
+}
